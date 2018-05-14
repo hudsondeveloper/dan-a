@@ -1,0 +1,56 @@
+﻿
+@model List<ProjetoDança.Models.Boleto>
+@{
+	ViewBag.Title = "Boleto";
+}
+
+<h2>Boleto</h2>
+
+
+
+<div class="">
+
+	<div class="col-sm-3 placeholder"></div>
+	<div class="row col-xs-6 col-sm-6 placeholder">
+		<div class="row">
+			<h3 class="titulo">Emprima seu boleto</h3>
+
+			<h2 class="sub-header">Section title</h2>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Mês Boleto</th>
+							<th>Pago</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						@foreach (var aluno in Model)
+						{
+							<tr>
+								<td>@aluno.Id </td>
+								<td>@aluno.MesBoleto</td>
+								@if (@aluno.pago == 1)
+								{
+									<td>Pago</td>
+								}
+								else
+								{
+									<td>Não Pago</td>
+								}
+
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3 placeholder"></div>
+
+</div>
+@Scripts.Render("~/bundles/jqueryval")
+</div>

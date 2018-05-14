@@ -1,0 +1,48 @@
+﻿@model ControleEstoque.web.Models.LoginViewModel
+
+@{
+	ViewBag.Title = "Login";
+}
+
+<div class="">
+	
+	<div class="col-sm-3 placeholder"></div>
+	<div class="row col-xs-6 col-sm-6 placeholder">
+		<div class="row">
+			<h3 class="titulo">Entrar no Sistema</h3>
+		</div>
+		<section id="loginForm">
+			@using (Html.BeginForm("Login", "Conta", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+		{
+			@Html.ValidationSummary(true, "", new { @calss = "text-danger" })
+			<div class="form-group">
+				@Html.LabelFor(m => m.Nome, new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+					@Html.ValidationMessageFor(m => m.Nome, "", new { @calss = "text-danger" })
+				</div>
+			</div>
+			<div class="form-group">
+				@Html.LabelFor(m => m.Senha, new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
+					@Html.ValidationMessageFor(m => m.Nome, "", new { @calss = "text-danger" })
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4 placeholder col-md-offset-2"></div>
+				@Html.CheckBoxFor(m => m.LembarMe)
+				@Html.LabelFor(m => m.LembarMe)
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4 col-md-offset-2"></div>
+				<input type="submit" class="btn btn-success" value="Entrar" />
+			</div>
+	}
+		</section>
+		<div class="col-sm-3 placeholder"></div>
+
+	</div>
+	@Scripts.Render("~/bundles/jqueryval")
+</div>
+

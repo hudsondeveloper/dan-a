@@ -1,0 +1,56 @@
+﻿@model List<ControleEstoque.web.Models.LoginViewModel>
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<h1 class="page-header">Dashboard</h1>
+
+	<div class="row placeholders">
+		<div class="col-xs-6 col-sm-3 placeholder">
+			<img src="http://placehold.it/200x200/0D8FDB/000" class="img-responsive" alt="Generic placeholder thumbnail">
+			<h4>Label</h4>
+			<span class="text-muted">Something else</span>
+		</div>
+		<div class="col-xs-6 col-sm-3 placeholder">
+			<img src="http://placehold.it/200x200/39DBAC/000" class="img-responsive" alt="Generic placeholder thumbnail">
+			<h4>Label</h4>
+			<span class="text-muted">Something else</span>
+		</div>
+		<div class="col-xs-6 col-sm-3 placeholder">
+			<img src="http://placehold.it/200x200/0D8FDB/000" class="img-responsive" alt="Generic placeholder thumbnail">
+			<h4>Label</h4>
+			<span class="text-muted">Something else</span>
+		</div>
+		<div class="col-xs-6 col-sm-3 placeholder">
+			<img src="http://placehold.it/200x200/39DBAC/000" class="img-responsive" alt="Generic placeholder thumbnail">
+			<h4>Label</h4>
+			<span class="text-muted">Something else</span>
+		</div>
+	</div>
+
+	<h2 class="sub-header">Section title</h2>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nome</th>
+					<th>Senha</th>
+					<th>Sexo</th>
+
+				</tr>
+			</thead>
+			<tbody>
+					
+				@foreach (var aluno in Model)
+				{
+					<tr>
+						<td>@aluno.Id </td>
+						<td>@aluno.Nome</td>
+						<td>@aluno.Senha</td>
+						<td>Homem</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
